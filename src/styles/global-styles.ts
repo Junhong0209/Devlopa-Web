@@ -5,6 +5,22 @@ const GlobalStyle = createGlobalStyle`
   ${reset}
 
   // Fonts 추가
+  @font-face {
+    font-family: Pretendard400;
+    src: url('/font/Pretendard-Regular.woff2');
+  }
+  @font-face {
+    font-family: Pretendard600;
+    src: url('/font/Pretendard-SemiBold.woff2');
+  }
+  @font-face {
+    font-family: Pretendard700;
+    src: url('/font/Pretendard-Bold.woff2');
+  }
+  @font-face {
+    font-family: Pretendard800;
+    src: url('/font/Pretendard-ExtraBold.woff2');
+  }
 
   html {
     height: 100%;
@@ -13,9 +29,8 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    font-family: -apple--apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 0;
-    overflow-x: auto;
+    overflow: hidden;
     min-height: 100vh;
   }
   a {
