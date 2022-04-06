@@ -1,16 +1,14 @@
 import type { NextPage } from 'next';
-import styled from 'styled-components';
+import Main from 'src/components/Main';
+import Header from 'src/components/Main/Header';
 
 const Home: NextPage = () => {
   return (
-    <Hello>
-      hello, this is next.js & Typescript template.
-    </Hello>
+    <>
+      <Header />
+      <Main />
+    </>
   )
 }
-
-const Hello = styled.div`
-  color: blue;
-`;
 
 export default Home
