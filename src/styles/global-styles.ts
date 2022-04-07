@@ -30,7 +30,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     margin: 0;
-    overflow: hidden;
+    overflow: auto;
     min-height: 100vh;
   }
   a {
