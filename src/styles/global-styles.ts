@@ -1,9 +1,6 @@
-import reset from "styled-reset";
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  ${reset}
-
   // Fonts 추가
   @font-face {
     font-family: Pretendard400;
@@ -27,6 +24,7 @@ const GlobalStyle = createGlobalStyle`
   }
   * {
     box-sizing: border-box;
+    font-family: Pretendard700;
   }
   body {
     margin: 0;
@@ -42,10 +40,6 @@ const GlobalStyle = createGlobalStyle`
     background-color: transparent;
     border: none;
     outline: none;
-  }
-  h1, h2, h3, h4, h5, h6 {
-    margin: 0;
-    font-family: -apple-system, sans-serif;
   }
   ul, li {
     list-style: none;
