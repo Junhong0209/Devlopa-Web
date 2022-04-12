@@ -6,3 +6,9 @@ export const Container = styled.div`
   margin-bottom: 30px;
   border-radius: 12px;
 `;
+
+export const ImageGroup = styled.div`
+  float: right;
+  margin-right: 3%;
+  margin-top: -7.5%;
+`;
