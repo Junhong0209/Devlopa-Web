@@ -1,7 +1,9 @@
 import Link from 'next/link';
 import { CSSProperties } from 'react';
-import * as S from 'src/components/Dashboard/index.style';
+
 import PostList from './PostList';
+
+import * as S from 'src/components/Dashboard/index.style';
 
 const CSS: CSSProperties = {
   float: 'right',
@@ -12,7 +14,7 @@ const Dashboard = () => {
     <>
       <S.Container>
         <S.AddPost>
-          <Link href='/'>
+          <Link href='/apply'>
             <a style={CSS}>
               게시글 작성하러 가기
             </a>
