@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+
 import Main from 'src/components/Main';
 import Header from 'src/components/Main/Header';
 

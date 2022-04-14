@@ -1,4 +1,5 @@
-import { NextPage } from "next";
+import type { NextPage } from "next";
+
 import Header from "src/components/Header";
 import ApplyComponent from "src/components/Apply/index";
 
