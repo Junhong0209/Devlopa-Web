@@ -1,5 +1,6 @@
-import * as S from 'src/components/UserDashboard/Title/index.style';
 import UserProfile from './User';
+
+import * as S from 'src/components/UserDashboard/Title/index.style';
 
 const UserProfileTitle = () => {
   return (

@@ -1,15 +1,17 @@
-import Image from "next/image";
 import { useRouter } from "next/router";
-import BackgrountImage from 'public/image/Welcome_Page_Background.svg';
+import { handleGetUrl } from "src/lib/api/index.api";
 import { useEffect, useState } from "react";
+import type { NextRouter } from "next/router";
+
+import Image from "next/image";
+import BackgrountImage from 'public/image/Welcome_Page_Background.svg';
 
 import * as S from "src/components/Main/index.style";
-import { handleGetUrl } from "src/lib/api/index.api";
 
 const Main = () => {
   const [DAuthURL, setDAuthURL] = useState<string>('');
 
-  const router = useRouter();
+  const router: NextRouter = useRouter();
 
   useEffect(() => {
     handleGetUrl().then(res => {
