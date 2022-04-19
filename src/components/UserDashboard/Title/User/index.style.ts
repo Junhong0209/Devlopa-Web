@@ -11,14 +11,14 @@ export const ProfileImage = styled.img`
 `;
 
 export const Number = styled.span`
-  position: relative;
-  top: -30px;
+  position: absolute;
   font-size: 16px;
 `;
 
 export const Name = styled.span`
-  position: relative;
-  top: -5px;
-  left: -40px;
+  position: absolute;
+  top: 140px;
   font-size: 24px;
 `;
+
+export const Text = styled.span``;
