@@ -1,11 +1,17 @@
-import UserProfile from './User';
+import UserProfile from "./User";
 
-import * as S from 'src/components/UserDashboard/Title/index.style';
+import * as S from "src/components/UserDashboard/Title/index.style";
 
-const UserProfileTitle = () => {
+const UserProfileTitle = ({
+  name,
+  number,
+}: {
+  name: string;
+  number: number;
+}) => {
   return (
     <S.Container>
-      <UserProfile />
+      <UserProfile name={name} number={number} />
     </S.Container>
   );
 };
