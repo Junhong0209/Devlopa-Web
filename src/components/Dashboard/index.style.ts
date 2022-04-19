@@ -12,11 +12,11 @@ export const AddPost = styled.div`
   float: right;
   font-size: 18px;
   font-family: Pretendard600;
-  color: #606D92;
+  color: #606d92;
 
   a {
     ::after {
-      content: '';
+      content: "";
       width: 150px;
       height: 10px;
       background-color: rgba(96, 109, 146, 0.3);
@@ -26,4 +26,12 @@ export const AddPost = styled.div`
       z-index: -1;
     }
   }
+`;
+
+export const Nothing = styled.div`
+  width: 30%;
+  margin: auto;
+  margin-top: 150px;
+  text-align: center;
+  font-size: 24px;
 `;
