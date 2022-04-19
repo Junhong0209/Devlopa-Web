@@ -2,9 +2,9 @@
 import Image from 'next/image';
 import UserImage from 'public/image/Default_User_Icon.svg';
 import * as S from 'src/components/Dashboard/PostItem/User/index.style';
+import { IUserProps } from 'src/type/user.type';
 
-const User = (props: any) => {
-  const { username, date } = props
+const User = ({ username, date }: IUserProps) => {
 
   return (
     <S.Container>
