@@ -1,44 +1,78 @@
-import Prism from 'prismjs';
-import 'prismjs/themes/prism.css';
+import Prism from "prismjs";
+import "prismjs/themes/prism.css";
 
-import '@toast-ui/editor/dist/toastui-editor.css';
-import { Editor } from '@toast-ui/react-editor';
+import { Editor } from "@toast-ui/react-editor";
+import "@toast-ui/editor/dist/toastui-editor.css";
 
-import '@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css';
-import colorSyntax from '@toast-ui/editor-plugin-code-syntax-highlight';
+import colorSyntax from "@toast-ui/editor-plugin-code-syntax-highlight";
+import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
 
-import { useEffect, useRef, useState } from 'react';
+import { useRef } from "react";
+import { CustomAlert } from "src/lib/SweetAlert";
+import { handelPostPosting } from "src/lib/api/post.api";
+import { NextRouter, useRouter } from "next/router";
 
-import * as S from 'src/components/Editor/index.style';
+import * as S from "src/components/Editor/index.style";
 
-const MarkdownEditor = ({ text }: { text: string }) => {
-  const [markdownValue, setMarkdownValue] = useState<string>('');
+interface Props {
+  initialValue: string;
+  buttonText: string;
+}
+
+const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
   const editorRef = useRef<any>();
+  const router: NextRouter = useRouter();
 
-  useEffect(() => {
-    // markdown 글을 작성 후 버튼 클릭으로 인해 useState의 값이 바뀌게 되면 서버로 값을 전송
-  }, [markdownValue]);
+  const onClick = (e: any) => {
+    const content: string = editorRef.current.getInstance().getMarkdown();
+    e.preventDefault();
+
+    if (content !== "") {
+      handelPostPosting({
+        content: content,
+      })
+        .then((res) => {
+          CustomAlert({
+            icon: "success",
+            title: "Success!",
+            text: res.detail,
+            router: router,
+          });
+        })
+        .catch((err) => {
+          console.log(err.response.status);
+          if (err.response.status === 400) {
+            CustomAlert({
+              icon: "error",
+              title: "Error!",
+              text: err.response.data.detail,
+              router: null,
+            });
+          }
+        });
+    } else {
+      CustomAlert({
+        icon: "error",
+        title: "Error!",
+        text: "아무것도 입력하지 않았습니다.",
+        router: null,
+      });
+    }
+  };
 
   return (
     <>
       <Editor
-        previewStyle='vertical'
-        height='500px'
-        initialEditType='markdown'
-        initialValue={markdownValue}
+        previewStyle="vertical"
+        height="500px"
+        initialEditType="markdown"
+        initialValue={initialValue}
         useCommandShortcut={true}
         ref={editorRef}
         plugins={[[colorSyntax, { highlighter: Prism }]]}
       />
-      <S.Button 
-        onClick={(e: any) => {
-          e.preventDefault();
-          setMarkdownValue(editorRef.current.getInstance().getMarkdown());
-          console.log(editorRef.current.getInstance().getMarkdown());
-        }}
-        type='button'
-      >
-        {text}
+      <S.Button onClick={onClick} type="button">
+        {buttonText}
       </S.Button>
     </>
   );

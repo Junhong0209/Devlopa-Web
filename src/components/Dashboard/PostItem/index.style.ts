@@ -11,4 +11,5 @@ export const ImageGroup = styled.div`
   float: right;
   margin-right: 3%;
   margin-top: -7.5%;
+  cursor: pointer;
 `;
