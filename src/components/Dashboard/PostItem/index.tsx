@@ -18,7 +18,7 @@ const PostItem = ({ data }: { data: IPostingData }) => {
   return (
     <S.Container>
       <User username={data.user_name} date={data.write_time} />
-      <S.ImageGroup>
+      <div id="image-group">
         <Image
           src={Edit}
           width="25"
@@ -37,7 +37,7 @@ const PostItem = ({ data }: { data: IPostingData }) => {
             alert("삭제 버튼 클릭!");
           }}
         />
-      </S.ImageGroup>
+      </div>
       <Viewer text={data.content} />
     </S.Container>
   );
