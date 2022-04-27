@@ -1,14 +1,14 @@
 import Link from "next/link";
+import PostList from "./PostList";
+
+import { Username } from "src/store";
+import { handelGetPost } from "src/api/post.api";
+import { useSetRecoilState } from "recoil";
+import { handleGetDodamUser } from "src/api/auth.api";
 import { NextRouter, useRouter } from "next/router";
 import { CSSProperties, useEffect, useState } from "react";
 
-import PostList from "./PostList";
-import { handelGetPost } from "src/lib/api/post.api";
-import { handleGetDodamUser } from "src/lib/api/auth.api";
-
 import * as S from "src/components/Dashboard/index.style";
-import { useSetRecoilState } from "recoil";
-import { Username } from "src/store";
 
 const CSS: CSSProperties = {
   float: "right",

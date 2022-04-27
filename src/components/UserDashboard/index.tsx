@@ -3,7 +3,7 @@ import addSchoolNumber from "src/utils/addSchoolNumber";
 import UserProfileTitle from "./Title";
 
 import { useEffect, useState } from "react";
-import { handleGetUserProfile } from "src/lib/api/auth.api";
+import { handleGetUserProfile } from "src/api/auth.api";
 
 import * as S from "src/components/UserDashboard/index.style";
 

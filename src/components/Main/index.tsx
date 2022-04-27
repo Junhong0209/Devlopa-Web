@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { handleGetUrl } from "src/lib/api/index.api";
+import { handleGetUrl } from "src/api/index.api";
 import { useEffect, useState } from "react";
 import type { NextRouter } from "next/router";
 

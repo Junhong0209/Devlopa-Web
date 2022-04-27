@@ -9,7 +9,7 @@ import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-sy
 
 import { useRef } from "react";
 import { CustomAlert } from "src/lib/SweetAlert";
-import { handelPostPosting } from "src/lib/api/post.api";
+import { handelPostPosting } from "src/api/post.api";
 import { NextRouter, useRouter } from "next/router";
 
 import * as S from "src/components/Editor/index.style";
@@ -37,6 +37,7 @@ const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
             title: "Success!",
             text: res.detail,
             router: router,
+            url: "/dashboard",
           });
         })
         .catch((err) => {
@@ -47,6 +48,7 @@ const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
               title: "Error!",
               text: err.response.data.detail,
               router: null,
+              url: null,
             });
           }
         });
@@ -56,6 +58,7 @@ const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
         title: "Error!",
         text: "아무것도 입력하지 않았습니다.",
         router: null,
+        url: null,
       });
     }
   };
