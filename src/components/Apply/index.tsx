@@ -10,7 +10,7 @@ const Apply = () => {
   return (
     <S.Container>
       <S.Title>게시글 작성</S.Title>
-      <Editor initialValue="" buttonText="작성완료" />
+      <Editor idx='' initialValue="" buttonText="작성완료" />
     </S.Container>
   );
 };

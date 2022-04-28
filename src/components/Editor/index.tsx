@@ -9,17 +9,18 @@ import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-sy
 
 import { useRef } from "react";
 import { CustomAlert } from "src/lib/SweetAlert";
-import { handelPostPosting } from "src/api/post.api";
 import { NextRouter, useRouter } from "next/router";
+import { handleModifyPost, handlePostPosting } from "src/api/post.api";
 
 import * as S from "src/components/Editor/index.style";
 
 interface Props {
-  initialValue: string;
+  idx: string | string[] | undefined;
+  initialValue: string | undefined;
   buttonText: string;
 }
 
-const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
+const MarkdownEditor = ({ idx, initialValue, buttonText }: Props) => {
   const editorRef = useRef<any>();
   const router: NextRouter = useRouter();
 
@@ -27,22 +28,54 @@ const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
     const content: string = editorRef.current.getInstance().getMarkdown();
     e.preventDefault();
 
-    if (content !== "") {
-      handelPostPosting({
-        content: content,
-      })
-        .then((res) => {
-          CustomAlert({
-            icon: "success",
-            title: "Success!",
-            text: res.detail,
-            router: router,
-            url: "/dashboard",
-          });
+    if (buttonText === "작성완료") {
+      if (content !== "") {
+        handlePostPosting({
+          content: content,
         })
-        .catch((err) => {
-          console.log(err.response.status);
-          if (err.response.status === 400) {
+          .then((res) => {
+            CustomAlert({
+              icon: "success",
+              title: "Success!",
+              text: res.detail,
+              router: router,
+              url: "/dashboard",
+            });
+          })
+          .catch((err) => {
+            if (err.response.status === 400) {
+              CustomAlert({
+                icon: "error",
+                title: "Error!",
+                text: err.response.data.detail,
+                router: null,
+                url: null,
+              });
+            }
+          });
+      } else {
+        CustomAlert({
+          icon: "error",
+          title: "Error!",
+          text: "아무것도 입력하지 않았습니다.",
+          router: null,
+          url: null,
+        });
+      }
+    } else if (buttonText === "수정완료") {
+      if (initialValue !== content) {
+        handleModifyPost({ post_idx: idx, content: content })
+          .then((res) => {
+            console.log();
+            CustomAlert({
+              icon: "success",
+              title: "Success!",
+              text: res.detail,
+              router: router,
+              url: "/dashboard",
+            });
+          })
+          .catch((err) => {
             CustomAlert({
               icon: "error",
               title: "Error!",
@@ -50,16 +83,16 @@ const MarkdownEditor = ({ initialValue, buttonText }: Props) => {
               router: null,
               url: null,
             });
-          }
+          });
+      } else {
+        CustomAlert({
+          icon: "error",
+          title: "Error!",
+          text: "기존의 글에서 수정된 것이 없습니다.",
+          router: null,
+          url: null,
         });
-    } else {
-      CustomAlert({
-        icon: "error",
-        title: "Error!",
-        text: "아무것도 입력하지 않았습니다.",
-        router: null,
-        url: null,
-      });
+      }
     }
   };
 

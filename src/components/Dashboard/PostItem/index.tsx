@@ -7,7 +7,7 @@ import Delete from "public/image/Delete.svg";
 
 import { CustomAlert } from "src/lib/SweetAlert";
 import { IPostingData } from "src/type/index.type";
-import { handelDeletePost } from "src/api/post.api";
+import { handleDeletePost } from "src/api/post.api";
 import { NextRouter, useRouter } from "next/router";
 
 import * as S from "src/components/Dashboard/PostItem/index.style";
@@ -30,7 +30,7 @@ const PostItem = ({ data }: { data: IPostingData }) => {
           height="25"
           alt="수정 이미지"
           onClick={() => {
-            alert("수정 버튼 클릭!");
+            router.push(`/modify/${data.idx}`);
           }}
         />
         <Image
@@ -39,7 +39,7 @@ const PostItem = ({ data }: { data: IPostingData }) => {
           height="25"
           alt="삭제 이미지"
           onClick={() => {
-            handelDeletePost({ post_idx: data.idx })
+            handleDeletePost({ data: { post_idx: data.idx } })
               .then((res) => {
                 console.log(res);
                 CustomAlert({

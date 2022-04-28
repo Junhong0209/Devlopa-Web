@@ -2,7 +2,7 @@ import Link from "next/link";
 import PostList from "./PostList";
 
 import { Username } from "src/store";
-import { handelGetPost } from "src/api/post.api";
+import { handleGetPost } from "src/api/post.api";
 import { useSetRecoilState } from "recoil";
 import { handleGetDodamUser } from "src/api/auth.api";
 import { NextRouter, useRouter } from "next/router";
@@ -26,7 +26,7 @@ const Dashboard = () => {
         .then((res) => {
           sessionStorage.setItem("access_token", res.data.token);
           router.push("/dashboard");
-          handelGetPost()
+          handleGetPost(null)
             .then((res) => {
               setUserName(res.data.user_profile.user_name);
               setPostdatas(res.data.contents);
@@ -39,7 +39,7 @@ const Dashboard = () => {
           console.log(err);
         });
     } else if (!code) {
-      handelGetPost()
+      handleGetPost(null)
         .then((res) => {
           setUserName(res.data.user_profile.user_name);
           setPostdatas(res.data.contents);
