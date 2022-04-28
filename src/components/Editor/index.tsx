@@ -66,7 +66,6 @@ const MarkdownEditor = ({ idx, initialValue, buttonText }: Props) => {
       if (initialValue !== content) {
         handleModifyPost({ post_idx: idx, content: content })
           .then((res) => {
-            console.log();
             CustomAlert({
               icon: "success",
               title: "Success!",

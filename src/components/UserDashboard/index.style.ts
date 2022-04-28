@@ -6,8 +6,13 @@ export const Container = styled.div`
   padding-top: 60px;
 `;
 
-export const Loading = styled.div`
+export const LoadingContainer = styled.div`
   text-align: center;
   padding-top: 360px;
   font-size: 48px;
+
+  & > .loading {
+    margin: auto;
+    margin-bottom: 30px;
+  }
 `;

@@ -13,8 +13,6 @@ const ModifyContainer = () => {
   const [initialValue, setInitialValue] = useState<string>();
   const router: NextRouter = useRouter();
 
-  console.log(router.query["id"]);
-
   useEffect(() => {
     handleGetPost({ post_idx: router.query["id"] })
       .then((res) => {

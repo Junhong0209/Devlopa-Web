@@ -2,7 +2,12 @@ import DefaultImage from "public/image/Default_User_Icon.svg";
 
 import * as S from "src/components/UserDashboard/Title/User/index.style";
 
-const UserProfile = ({ name, number }: { name: string; number: number }) => {
+interface Props {
+  name: string;
+  number: number;
+}
+
+const UserProfile = ({ name, number }: Props) => {
   return (
     <S.Container>
       <S.ProfileImage src={DefaultImage} />

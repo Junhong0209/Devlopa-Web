@@ -1,6 +1,7 @@
 import PostList from "../Dashboard/PostList";
 import addSchoolNumber from "src/utils/addSchoolNumber";
 import UserProfileTitle from "./Title";
+import ReactLoading from "react-loading";
 
 import { useEffect, useState } from "react";
 import { handleGetUserProfile } from "src/api/auth.api";
@@ -18,7 +19,6 @@ const UserDashboard = () => {
     setLoading(true);
     handleGetUserProfile()
       .then((res) => {
-        console.log(res.data.user_profile);
         setPostDatas(res.data.contents);
         setName(res.data.user_profile.user_name);
         setNumber(
@@ -38,7 +38,10 @@ const UserDashboard = () => {
   return (
     <>
       {loading ? (
-        <S.Loading>로딩 중...</S.Loading>
+        <S.LoadingContainer>
+          <ReactLoading type="spin" color="#36383C" className="loading" />
+          로딩 중...
+        </S.LoadingContainer>
       ) : (
         <>
           <S.Container>
