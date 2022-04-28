@@ -9,7 +9,7 @@ const Editor = dynamic(() => import("src/components/Editor/index"), {
   ssr: false,
 });
 
-const ModifyContainer = () => {
+const ModifyContainer = (): JSX.Element => {
   const [initialValue, setInitialValue] = useState<string>();
   const router: NextRouter = useRouter();
 

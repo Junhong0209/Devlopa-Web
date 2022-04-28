@@ -8,7 +8,7 @@ import { handleGetUserProfile } from "src/api/auth.api";
 
 import * as S from "src/components/UserDashboard/index.style";
 
-const UserDashboard = () => {
+const UserDashboard = (): JSX.Element => {
   const [postDatas, setPostDatas] = useState<object[]>();
   const [name, setName] = useState<string>("");
   const [number, setNumber] = useState<any>();

@@ -9,7 +9,7 @@ import UserDefault from "public/image/Default_User_Icon.svg";
 
 import * as S from "src/components/Header/index.style";
 
-const Header = () => {
+const Header = (): JSX.Element => {
   const router: NextRouter = useRouter();
   const username = useRecoilValue(Username);
 

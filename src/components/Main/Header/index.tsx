@@ -3,7 +3,7 @@ import MainLogo from "public/image/Main_Logo.svg";
 
 import * as S from "src/components/Main/Header/index.style";
 
-const WelcomeHeader = () => {
+const WelcomeHeader = (): JSX.Element => {
   return (
     <S.Container>
       <S.Layout>

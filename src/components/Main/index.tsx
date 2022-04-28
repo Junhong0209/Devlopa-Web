@@ -8,7 +8,7 @@ import BackgrountImage from "public/image/Welcome_Page_Background.svg";
 
 import * as S from "src/components/Main/index.style";
 
-const Main = () => {
+const Main = (): JSX.Element => {
   const [DAuthURL, setDAuthURL] = useState<string>("");
 
   const router: NextRouter = useRouter();

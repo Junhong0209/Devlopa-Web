@@ -7,7 +7,7 @@ interface Props {
   number: number;
 }
 
-const UserProfileTitle = ({ name, number }: Props) => {
+const UserProfileTitle = ({ name, number }: Props): JSX.Element => {
   return (
     <S.Container>
       <UserProfile name={name} number={number} />

@@ -14,7 +14,7 @@ const CSS: CSSProperties = {
   float: "right",
 };
 
-const Dashboard = () => {
+const Dashboard = (): JSX.Element => {
   const router: NextRouter = useRouter();
   const code: string | string[] | undefined = router.query.code;
   const [postDatas, setPostdatas] = useState<object[]>();

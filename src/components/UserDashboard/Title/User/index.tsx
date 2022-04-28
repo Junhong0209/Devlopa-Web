@@ -7,7 +7,7 @@ interface Props {
   number: number;
 }
 
-const UserProfile = ({ name, number }: Props) => {
+const UserProfile = ({ name, number }: Props): JSX.Element => {
   return (
     <S.Container>
       <S.ProfileImage src={DefaultImage} />

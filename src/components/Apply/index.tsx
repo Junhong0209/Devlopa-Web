@@ -6,7 +6,7 @@ const Editor = dynamic(() => import("src/components/Editor/index"), {
   ssr: false,
 });
 
-const Apply = () => {
+const Apply = (): JSX.Element => {
   return (
     <S.Container>
       <S.Title>게시글 작성</S.Title>

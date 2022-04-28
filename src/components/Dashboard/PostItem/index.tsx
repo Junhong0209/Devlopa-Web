@@ -17,7 +17,7 @@ const Viewer = dynamic(
   { ssr: false }
 );
 
-const PostItem = ({ data }: { data: IPostingData }) => {
+const PostItem = ({ data }: { data: IPostingData }): JSX.Element => {
   const router: NextRouter = useRouter();
 
   return (

@@ -20,7 +20,11 @@ interface Props {
   buttonText: string;
 }
 
-const MarkdownEditor = ({ idx, initialValue, buttonText }: Props) => {
+const MarkdownEditor = ({
+  idx,
+  initialValue,
+  buttonText,
+}: Props): JSX.Element => {
   const editorRef = useRef<any>();
   const router: NextRouter = useRouter();
 
