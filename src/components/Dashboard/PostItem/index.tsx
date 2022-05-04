@@ -22,46 +22,49 @@ const PostItem = ({ data }: { data: IPostingData }): JSX.Element => {
 
   return (
     <S.Container>
-      <User username={data.user_name} date={data.write_time} />
-      <div id="image-group">
-        <Image
-          src={Edit}
-          width="25"
-          height="25"
-          alt="수정 이미지"
-          onClick={() => {
-            router.push(`/modify/${data.idx}`);
-          }}
-        />
-        <Image
-          src={Delete}
-          width="25"
-          height="25"
-          alt="삭제 이미지"
-          onClick={() => {
-            handleDeletePost({ data: { post_idx: data.idx } })
-              .then((res) => {
-                console.log(res);
-                CustomAlert({
-                  icon: "success",
-                  title: "Success!",
-                  text: "게시글이 성공적으로 삭제되었습니다.",
-                  router: router,
-                  url: null,
-                });
-              })
-              .catch((err) => {
-                CustomAlert({
-                  icon: "error",
-                  title: "Error!",
-                  text: "존재하지 않는 게시글이거나 본인의 게시글이 아닙니다.",
-                  router: null,
-                  url: null,
-                });
-              });
-          }}
-        />
-      </div>
+      <S.PostTitle>
+        <User username={data.user_name} date={data.write_time} />
+        {data.my_post && (
+          <div id="image-group">
+            <Image
+              src={Edit}
+              width="25"
+              height="25"
+              alt="수정 이미지"
+              onClick={() => {
+                router.push(`/modify/${data.idx}`);
+              }}
+            />
+            <Image
+              src={Delete}
+              width="25"
+              height="25"
+              alt="삭제 이미지"
+              onClick={() => {
+                handleDeletePost({ data: { post_idx: data.idx } })
+                  .then((res) => {
+                    CustomAlert({
+                      icon: "success",
+                      title: "Success!",
+                      text: "게시글이 성공적으로 삭제되었습니다.",
+                      router: router,
+                      url: null,
+                    });
+                  })
+                  .catch((err) => {
+                    CustomAlert({
+                      icon: "error",
+                      title: "Error!",
+                      text: "본인의 게시글이 아닙니다.",
+                      router: null,
+                      url: null,
+                    });
+                  });
+              }}
+            />
+          </div>
+        )}
+      </S.PostTitle>
       <Viewer text={data.content} />
     </S.Container>
   );
