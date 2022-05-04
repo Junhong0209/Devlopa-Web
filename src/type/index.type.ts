@@ -5,6 +5,7 @@ export interface IPostingData {
   grade: number;
   room: number;
   number: number;
+  my_post: boolean;
   write_time: string;
   content: string;
 }
