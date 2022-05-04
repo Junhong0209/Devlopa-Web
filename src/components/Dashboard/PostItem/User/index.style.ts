@@ -1,26 +1,34 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  position: relative;
+  display: flex;
+  width: auto;
   padding-top: 20px;
-  margin-left: 20px;
-  margin-bottom: 20px;
+  margin-left: 1.2rem;
+  margin-bottom: 1.2rem;
+`;
+
+export const ImageWrapper = styled.div`
+  display: flex;
+  box-sizing: content-box;
+  cursor: pointer;
 `;
 
 export const Name = styled.span`
-  position: absolute;
-  top: 20px;
-  left: 50px;
+  display: flex;
+  margin-left: 1rem;
   font-family: Pretendard700;
   font-size: 17px;
-  color: #0F1117;
+  color: #0f1117;
+  z-index: 1;
+  cursor: pointer;
 `;
 
 export const Time = styled.span`
-  position: absolute;
-  top: 40px;
-  left: 50px;
+  display: flex;
+  padding-top: 1.4rem;
+  margin-left: -2.7rem;
   font-family: Pretendard500;
   font-size: 13px;
-  color: #898FA0;
+  color: #898fa0;
 `;
