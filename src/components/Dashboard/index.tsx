@@ -1,5 +1,5 @@
 import Link from "next/link";
-import PostList from "./PostList";
+import PostList from "src/components/Post/List/index";
 
 import { Username } from "src/store";
 import { handleGetPost } from "src/api/post.api";
