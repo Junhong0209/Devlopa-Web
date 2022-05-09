@@ -1,12 +1,9 @@
-import dynamic from "next/dynamic";
-import Image from "next/image";
-
 import User from "./User";
+import Image from "next/image";
+import dynamic from "next/dynamic";
 import Edit from "public/image/Edit.svg";
 import Delete from "public/image/Delete.svg";
-
 import { CustomAlert } from "src/lib/SweetAlert";
-import { IPostingData } from "src/type/index.type";
 import { handleDeletePost } from "src/api/post.api";
 import { NextRouter, useRouter } from "next/router";
 
@@ -16,7 +13,19 @@ const Viewer = dynamic(() => import("src/components/Viewer/index"), {
   ssr: false,
 });
 
-const PostItem = ({ data }: { data: IPostingData }): JSX.Element => {
+interface Props {
+  idx: number;
+  user_name: string;
+  profile_image: string | null;
+  grade: number;
+  room: number;
+  number: number;
+  my_post: boolean;
+  write_time: string;
+  content: string;
+}
+
+const PostItem = ({ data }: { data: Props }): JSX.Element => {
   const router: NextRouter = useRouter();
 
   return (
