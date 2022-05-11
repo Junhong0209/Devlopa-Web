@@ -3,6 +3,7 @@ import Image from "next/image";
 import dynamic from "next/dynamic";
 import Edit from "public/image/Edit.svg";
 import Delete from "public/image/Delete.svg";
+import CommentList from "../Comment/List";
 import { CustomAlert } from "src/lib/SweetAlert";
 import { handleDeletePost } from "src/api/post.api";
 import { NextRouter, useRouter } from "next/router";
@@ -74,6 +75,7 @@ const PostItem = ({ data }: { data: Props }): JSX.Element => {
         )}
       </S.PostTitle>
       <Viewer text={data.content} />
+      <CommentList idx={data.idx} />
     </S.Container>
   );
 };
