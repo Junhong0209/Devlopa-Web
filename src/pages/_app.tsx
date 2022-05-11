@@ -1,4 +1,5 @@
 import { RecoilRoot } from "recoil";
+import { Toaster } from "react-hot-toast";
 
 import type { AppProps } from "next/app";
 
@@ -12,6 +13,14 @@ function MyApp({ Component, pageProps }: AppProps) {
       <ErrorBoundary>
         <GlobalStyle />
         <Component {...pageProps} />
+        <Toaster
+          position="bottom-center"
+          toastOptions={{
+            style: {
+              width: "560px",
+            },
+          }}
+        />
       </ErrorBoundary>
     </RecoilRoot>
   );
