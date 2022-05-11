@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { NextRouter } from "next/router";
 
 import Image from "next/image";
-import BackgrountImage from "public/image/Welcome_Page_Background.svg";
+import BackgrountImage from "public/assets/Welcome_Page_Background.svg";
 
 import * as S from "src/components/Main/index.style";
 

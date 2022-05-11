@@ -4,8 +4,8 @@ import { useRecoilValue } from "recoil";
 import type { NextRouter } from "next/router";
 
 import Image from "next/image";
-import MainLogo from "public/image/Main_Logo.svg";
-import UserDefault from "public/image/Default_User_Icon.svg";
+import MainLogo from "public/assets/Main_Logo.svg";
+import UserDefault from "public/assets/Default_User_Icon.svg";
 
 import * as S from "src/components/Header/index.style";
 

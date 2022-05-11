@@ -1,8 +1,8 @@
 import User from "./User";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Edit from "public/image/Edit.svg";
-import Delete from "public/image/Delete.svg";
+import Edit from "public/assets/post/Edit.svg";
+import Delete from "public/assets/post/Delete.svg";
 import CommentList from "../Comment/List";
 import { CustomAlert } from "src/lib/SweetAlert";
 import { handleDeletePost } from "src/api/post.api";
