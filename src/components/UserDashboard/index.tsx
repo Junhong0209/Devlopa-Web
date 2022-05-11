@@ -1,4 +1,4 @@
-import PostList from "../Dashboard/PostList";
+import PostList from "src/components/Post/List";
 import addSchoolNumber from "src/utils/addSchoolNumber";
 import UserProfileTitle from "./Title";
 import ReactLoading from "react-loading";
