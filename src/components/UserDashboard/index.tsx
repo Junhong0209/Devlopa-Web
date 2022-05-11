@@ -3,6 +3,7 @@ import addSchoolNumber from "src/utils/addSchoolNumber";
 import UserProfileTitle from "./Title";
 import ReactLoading from "react-loading";
 
+import { ErrorToast } from "src/lib/Toast";
 import { useEffect, useState } from "react";
 import { handleGetUserProfile } from "src/api/auth.api";
 
@@ -12,10 +13,9 @@ const UserDashboard = (): JSX.Element => {
   const [postDatas, setPostDatas] = useState<object[]>();
   const [name, setName] = useState<string>("");
   const [number, setNumber] = useState<any>();
-
   const [loading, setLoading] = useState<boolean>(true);
 
-  useEffect(() => {
+  const getUserProfile = () => {
     setLoading(true);
     handleGetUserProfile()
       .then((res) => {
@@ -31,8 +31,12 @@ const UserDashboard = (): JSX.Element => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err);
+        ErrorToast(err.detail);
       });
+  };
+
+  useEffect(() => {
+    getUserProfile();
   }, []);
 
   return (
@@ -47,7 +51,11 @@ const UserDashboard = (): JSX.Element => {
           <S.Container>
             <UserProfileTitle name={name} number={number} />
           </S.Container>
-          <PostList postDatas={postDatas} />
+          <PostList
+            postDatas={postDatas}
+            getAllPost={null}
+            getUserProfile={getUserProfile}
+          />
         </>
       )}
     </>
