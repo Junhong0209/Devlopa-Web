@@ -5,6 +5,7 @@ import * as S from "./index.style";
 interface Props {
   idx: number;
   user_name: string;
+  my_comment: boolean;
   content: string;
 }
 
@@ -15,7 +16,7 @@ const CommentItem = ({
   data: Props;
   reloadComment: () => void;
 }): JSX.Element => {
-  const { idx, user_name, content } = data;
+  const { idx, user_name, my_comment, content } = data;
 
   const onClickDelete = () => {
     handleDeleteComment({ data: { comment_idx: idx } })
@@ -27,23 +28,26 @@ const CommentItem = ({
         ErrorToast(err.response.data.detail);
       });
   };
+  console.log(my_comment);
 
   return (
     <>
       <S.Image />
       <S.Container>
         <S.Name>{user_name}</S.Name>
-        <S.MenuImage>
-          <div id="dropdown-content">
-            <div
-              onClick={() => {
-                onClickDelete();
-              }}
-            >
-              삭제
+        {my_comment && (
+          <S.MenuImage>
+            <div id="dropdown-content">
+              <div
+                onClick={() => {
+                  onClickDelete();
+                }}
+              >
+                삭제
+              </div>
             </div>
-          </div>
-        </S.MenuImage>
+          </S.MenuImage>
+        )}
         <S.Content>{content}</S.Content>
       </S.Container>
     </>
