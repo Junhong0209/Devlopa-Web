@@ -8,9 +8,11 @@ import codeSyntaxHighlight from "@toast-ui/editor-plugin-code-syntax-highlight";
 
 import * as S from "src/components/Viewer/index.style";
 
-const MarkdownViewer = (props: any): JSX.Element => {
-  const { text } = props;
+interface Props {
+  text: string;
+}
 
+const MarkdownViewer = ({ text }: Props): JSX.Element => {
   return (
     <S.Container>
       <Viewer
