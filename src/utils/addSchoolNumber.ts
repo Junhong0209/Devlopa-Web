@@ -1,3 +1,5 @@
+import { ErrorToast } from "src/lib/Toast";
+
 const addSchoolNumber = (grade: string, room: string, number: string) => {
   if (number.length === 2) {
     const returnData: string = grade + room + number;
@@ -8,7 +10,7 @@ const addSchoolNumber = (grade: string, room: string, number: string) => {
 
     return returnData;
   } else {
-    console.log("잘 못된 값이 있습니다.");
+    ErrorToast("잘못된 값이 있습니다.");
   }
 };
 

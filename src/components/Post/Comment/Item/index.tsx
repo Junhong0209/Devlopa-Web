@@ -1,4 +1,4 @@
-import { SuccessToast } from "src/lib/Toast";
+import { ErrorToast, SuccessToast } from "src/lib/Toast";
 import { handleDeleteComment } from "src/api/comment.api";
 import * as S from "./index.style";
 
@@ -24,7 +24,7 @@ const CommentItem = ({
         SuccessToast(res.detail);
       })
       .catch((err) => {
-        console.log(err);
+        ErrorToast(err.response.data.detail);
       });
   };
 

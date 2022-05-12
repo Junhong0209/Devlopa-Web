@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
-import { handleGetUrl } from "src/api/index.api";
+import { ErrorToast } from "src/lib/Toast";
 import { useEffect, useState } from "react";
 import type { NextRouter } from "next/router";
+import { handleGetUrl } from "src/api/index.api";
 
 import Image from "next/image";
 import BackgrountImage from "public/assets/Welcome_Page_Background.svg";
@@ -19,7 +20,7 @@ const Main = (): JSX.Element => {
         setDAuthURL(res.data.DAuthURL);
       })
       .catch((err) => {
-        console.log(err);
+        ErrorToast(err.response.data.detail);
       });
   }, []);
 
