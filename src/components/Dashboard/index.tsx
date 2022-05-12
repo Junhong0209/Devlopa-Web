@@ -48,11 +48,11 @@ const Dashboard = (): JSX.Element => {
               }
             })
             .catch((err) => {
-              ErrorToast(err.detail);
+              ErrorToast(err.response.data.detail);
             });
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
     } else if (!code) {
       handleGetPost(null)
@@ -65,7 +65,7 @@ const Dashboard = (): JSX.Element => {
           }
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps

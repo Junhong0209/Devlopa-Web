@@ -31,7 +31,7 @@ const CommentList = ({ idx }: Props): JSX.Element => {
         }
       })
       .catch((err) => {
-        ErrorToast(err.detail);
+        ErrorToast(err.response.data.detail);
       });
   };
 

@@ -23,7 +23,7 @@ const CommentInput = ({ idx, reloadComment }: Props): JSX.Element => {
           SuccessToast(res.detail);
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
       setComment("");
     } else {
