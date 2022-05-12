@@ -1,6 +1,7 @@
 import type { NextPage } from "next";
 
 import Header from "src/components/Header";
+import withAuth from "src/utils/withAuth";
 import ApplyComponent from "src/components/Apply/index";
 
 const Apply: NextPage = () => {
@@ -12,4 +13,4 @@ const Apply: NextPage = () => {
   );
 };
 
-export default Apply;
+export default withAuth(Apply);
