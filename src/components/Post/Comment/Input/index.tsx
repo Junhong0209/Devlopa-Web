@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
-import Send from "public/image/Send.svg";
+import Send from "public/assets/post/Send.svg";
 import useInput from "src/hooks/useTextarea";
 import { handlePostComment } from "src/api/comment.api";
 import { ErrorToast, SuccessToast } from "src/lib/Toast";
@@ -23,7 +23,7 @@ const CommentInput = ({ idx, reloadComment }: Props): JSX.Element => {
           SuccessToast(res.detail);
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
       setComment("");
     } else {

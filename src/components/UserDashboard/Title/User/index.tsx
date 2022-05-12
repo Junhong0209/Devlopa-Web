@@ -1,4 +1,4 @@
-import DefaultImage from "public/image/Default_User_Icon.svg";
+import DefaultImage from "public/assets/Default_User_Icon.svg";
 
 import * as S from "src/components/UserDashboard/Title/User/index.style";
 

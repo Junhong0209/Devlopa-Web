@@ -8,7 +8,7 @@ import colorSyntax from "@toast-ui/editor-plugin-code-syntax-highlight";
 import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-syntax.css";
 
 import { useRef } from "react";
-import { CustomAlert } from "src/lib/SweetAlert";
+import { CustomAlert, SuccessAlert, ErrorAlert } from "src/lib/SweetAlert";
 import { NextRouter, useRouter } from "next/router";
 import { handleModifyPost, handlePostPosting } from "src/api/post.api";
 
@@ -38,9 +38,7 @@ const MarkdownEditor = ({
           content: content,
         })
           .then((res) => {
-            CustomAlert({
-              icon: "success",
-              title: "Success!",
+            SuccessAlert({
               text: res.detail,
               router: router,
               url: "/dashboard",
@@ -48,9 +46,7 @@ const MarkdownEditor = ({
           })
           .catch((err) => {
             if (err.response.status === 400) {
-              CustomAlert({
-                icon: "error",
-                title: "Error!",
+              ErrorAlert({
                 text: err.response.data.detail,
                 router: null,
                 url: null,
@@ -58,9 +54,7 @@ const MarkdownEditor = ({
             }
           });
       } else {
-        CustomAlert({
-          icon: "error",
-          title: "Error!",
+        ErrorAlert({
           text: "아무것도 입력하지 않았습니다.",
           router: null,
           url: null,
@@ -70,27 +64,21 @@ const MarkdownEditor = ({
       if (initialValue !== content) {
         handleModifyPost({ post_idx: idx, content: content })
           .then((res) => {
-            CustomAlert({
-              icon: "success",
-              title: "Success!",
+            SuccessAlert({
               text: res.detail,
               router: router,
               url: "/dashboard",
             });
           })
           .catch((err) => {
-            CustomAlert({
-              icon: "error",
-              title: "Error!",
+            ErrorAlert({
               text: err.response.data.detail,
               router: null,
               url: null,
             });
           });
       } else {
-        CustomAlert({
-          icon: "error",
-          title: "Error!",
+        ErrorAlert({
           text: "기존의 글에서 수정된 것이 없습니다.",
           router: null,
           url: null,

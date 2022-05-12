@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import Image from "next/image";
-import UserImage from "public/image/Default_User_Icon.svg";
+import UserImage from "public/assets/Default_User_Icon.svg";
 import * as S from "src/components/Post/Item/User/index.style";
 
 interface Props {

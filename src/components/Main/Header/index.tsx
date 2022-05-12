@@ -1,5 +1,5 @@
 import Image from "next/image";
-import MainLogo from "public/image/Main_Logo.svg";
+import MainLogo from "public/assets/Main_Logo.svg";
 
 import * as S from "src/components/Main/Header/index.style";
 

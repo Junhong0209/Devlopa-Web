@@ -18,7 +18,7 @@ export const Image = styled.span`
   justify-content: space-between;
   width: 25px;
   height: 25px;
-  background-image: url("/image/Default_User_Icon.svg");
+  background-image: url("/assets/Default_User_Icon.svg");
   background-repeat: repeat;
   background-size: cover;
 `;
@@ -35,7 +35,7 @@ export const MenuImage = styled.span`
   margin-right: 5px;
   width: 15px;
   height: 20px;
-  background-image: url("/image/Menu.svg");
+  background-image: url("/assets/post/Menu.svg");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;

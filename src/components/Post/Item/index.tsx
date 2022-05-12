@@ -1,12 +1,11 @@
 import User from "./User";
 import Image from "next/image";
 import dynamic from "next/dynamic";
-import Edit from "public/image/Edit.svg";
-import Delete from "public/image/Delete.svg";
+import Edit from "public/assets/post/Edit.svg";
+import Delete from "public/assets/post/Delete.svg";
 import CommentList from "../Comment/List";
-import { CustomAlert } from "src/lib/SweetAlert";
-import { handleDeletePost } from "src/api/post.api";
 import { NextRouter, useRouter } from "next/router";
+import { deletePost } from "src/utils/deletePost";
 
 import * as S from "src/components/Post/Item/index.style";
 
@@ -15,18 +14,22 @@ const Viewer = dynamic(() => import("src/components/Viewer/index"), {
 });
 
 interface Props {
-  idx: number;
-  user_name: string;
-  profile_image: string | null;
-  grade: number;
-  room: number;
-  number: number;
-  my_post: boolean;
-  write_time: string;
-  content: string;
+  data: {
+    idx: number;
+    user_name: string;
+    profile_image: string | null;
+    grade: number;
+    room: number;
+    number: number;
+    my_post: boolean;
+    write_time: string;
+    content: string;
+  };
+  getAllPost: () => void | null;
+  getUserProfile: () => void | null;
 }
 
-const PostItem = ({ data }: { data: Props }): JSX.Element => {
+const PostItem = ({ data, getAllPost, getUserProfile }: Props): JSX.Element => {
   const router: NextRouter = useRouter();
 
   return (
@@ -50,25 +53,11 @@ const PostItem = ({ data }: { data: Props }): JSX.Element => {
               height="25"
               alt="삭제 이미지"
               onClick={() => {
-                handleDeletePost({ data: { post_idx: data.idx } })
-                  .then((res) => {
-                    CustomAlert({
-                      icon: "success",
-                      title: "Success!",
-                      text: "게시글이 성공적으로 삭제되었습니다.",
-                      router: router,
-                      url: null,
-                    });
-                  })
-                  .catch((err) => {
-                    CustomAlert({
-                      icon: "error",
-                      title: "Error!",
-                      text: "본인의 게시글이 아닙니다.",
-                      router: null,
-                      url: null,
-                    });
-                  });
+                deletePost({
+                  idx: data.idx,
+                  getAllPost: getAllPost,
+                  getUserProfile: getUserProfile,
+                });
               }}
             />
           </div>

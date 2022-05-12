@@ -21,6 +21,17 @@ const Dashboard = (): JSX.Element => {
   const [postDatas, setPostdatas] = useState<object[]>();
   const setUserName = useSetRecoilState(Username);
 
+  const getAllPost = () => {
+    handleGetPost(null).then((res) => {
+      setUserName(res.data.user_profile.user_name);
+      if (res.data.list_count !== 0) {
+        setPostdatas(res.data.contents);
+      } else {
+        setPostdatas(undefined);
+      }
+    });
+  };
+
   useEffect(() => {
     if (code) {
       handleGetDodamUser(code)
@@ -37,11 +48,11 @@ const Dashboard = (): JSX.Element => {
               }
             })
             .catch((err) => {
-              ErrorToast(err.detail);
+              ErrorToast(err.response.data.detail);
             });
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
     } else if (!code) {
       handleGetPost(null)
@@ -54,7 +65,7 @@ const Dashboard = (): JSX.Element => {
           }
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -70,7 +81,11 @@ const Dashboard = (): JSX.Element => {
         </S.AddPost>
       </S.Container>
       {postDatas !== undefined ? (
-        <PostList postDatas={postDatas} />
+        <PostList
+          postDatas={postDatas}
+          getAllPost={getAllPost}
+          getUserProfile={null}
+        />
       ) : (
         <S.Nothing>게시글이 없습니다.</S.Nothing>
       )}
