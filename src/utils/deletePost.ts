@@ -9,7 +9,7 @@ interface Props {
   getUserProfile: () => void | null;
 }
 
-export const useDeletePost = ({ idx, getAllPost, getUserProfile }: Props) => {
+export const deletePost = ({ idx, getAllPost, getUserProfile }: Props) => {
   Swal.fire({
     icon: "question",
     title: "Really?",
@@ -27,7 +27,7 @@ export const useDeletePost = ({ idx, getAllPost, getUserProfile }: Props) => {
           }
         })
         .catch((err) => {
-          ErrorToast(err.detail);
+          ErrorToast(err.response.data.detail);
         });
     } else if (result.isDismissed) {
       SuccessToast("게시물 삭제를 취소하였습니다.");
