@@ -6,4 +6,9 @@ export const Container = styled.div`
   margin: auto;
   padding-top: 50px;
   padding-bottom: 100px;
+
+  & > #nothing-posting {
+    text-align: center;
+    font-size: 24px;
+  }
 `;

@@ -15,7 +15,8 @@ const PostList = ({
 }: Props): JSX.Element => {
   return (
     <S.Container>
-      {postDatas &&
+      {postDatas.length !== 0 ? (
+        postDatas &&
         postDatas.map((postData: any) => {
           return (
             <PostItem
@@ -25,7 +26,10 @@ const PostList = ({
               getUserProfile={getUserProfile}
             />
           );
-        })}
+        })
+      ) : (
+        <div id="nothing-posting">게시글이 없습니다.</div>
+      )}
     </S.Container>
   );
 };
