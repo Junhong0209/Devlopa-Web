@@ -48,18 +48,6 @@ const GlobalStyle = createGlobalStyle`
   #__next {
     height: 100vh;
   }
-
-  @media only screen and (max-width: 768px) {
-    body {
-      font-size: 12px;
-    }
-  }
-
-  @media only screen and (max-width: 576px) {
-    body {
-      font-size: 10px
-    }
-  }
 `;
 
 export default GlobalStyle;
