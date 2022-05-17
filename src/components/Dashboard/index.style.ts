@@ -12,14 +12,14 @@ export const AddPost = styled.div`
   float: right;
   font-size: 18px;
   font-family: Pretendard600;
-  color: #606d92;
+  color: ${({ theme }) => theme.colors.Blue600};
 
   a {
     ::after {
       content: "";
       width: 150px;
       height: 10px;
-      background-color: rgba(96, 109, 146, 0.3);
+      background-color: ${({ theme }) => theme.colors.Blue700};
       position: absolute;
       margin-top: -6px;
       display: block;

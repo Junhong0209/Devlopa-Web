@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
   display: flex;
   height: 30px;
-  box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 4px 20px 0px ${({ theme }) => theme.colors.Black900};
   border-radius: 20px;
   justify-content: space-between;
 `;
@@ -17,7 +17,7 @@ export const Input = styled.textarea`
   padding: 5px 0px 0px 15px;
   resize: none;
   ::placeholder {
-    color: rgba(16, 18, 23, 0.7);
+    color: ${({ theme }) => theme.colors.Black700};
     vertical-align: middle;
     justify-content: center;
     align-items: center;

@@ -7,8 +7,8 @@ export const Container = styled.div`
   left: 40px;
   min-width: 100px;
   width: fit-content;
-  background-color: rgba(52, 53, 58, 0.2);
-  color: #37393e;
+  background-color: ${({ theme }) => theme.colors.Black500};
+  color: ${({ theme }) => theme.colors.Main2};
   border-radius: 7px;
   padding: 5px;
 `;
@@ -50,7 +50,7 @@ export const MenuImage = styled.span`
     display: none;
     position: absolute;
     min-width: 40px;
-    background-color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.White};
 
     & > div {
       text-align: center;
@@ -58,7 +58,7 @@ export const MenuImage = styled.span`
       border-radius: 3px;
 
       &:hover {
-        background-color: #c4c4c4;
+        background-color: ${({ theme }) => theme.colors.Gray800};
         cursor: pointer;
       }
     }

@@ -17,13 +17,13 @@ export const Title = styled.div`
   width: 280px;
   font-family: Pretendard700;
   font-size: 50px;
-  color: #2D67FF;
+  color: ${({ theme }) => theme.colors.Blue900};
 
   ::before {
     content: '';
     width: 270px;
     height: 17px;
-    background-color: #CCDAFF;
+    background-color: ${({ theme }) => theme.colors.Blue500};
     position: absolute;
     margin-top: 35px;
     display: block;
@@ -35,7 +35,7 @@ export const SubTitle = styled.div`
   margin-top: 13px;
   font-family: Pretendard700;
   font-size: 20px;
-  color: #606AB5;
+  color: ${({ theme }) => theme.colors.Blue900};
 `;
 
 export const LoginButton = styled.button`
@@ -45,8 +45,8 @@ export const LoginButton = styled.button`
   border-radius: 12px;
   font-family: Pretendard800;
   font-size: 20px;
-  background-color: #2D68FF;
-  color: #FFFFFF;
+  background-color: ${({ theme }) => theme.colors.Blue900};
+  color: ${({ theme }) => theme.colors.White};
 `;
 
 export const BackgroundImage = styled.span`

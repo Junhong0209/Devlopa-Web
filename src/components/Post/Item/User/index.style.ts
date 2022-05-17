@@ -19,7 +19,7 @@ export const Name = styled.span`
   margin-left: 1rem;
   font-family: Pretendard700;
   font-size: 17px;
-  color: #0f1117;
+  color: ${({ theme }) => theme.colors.Black600};
   z-index: 1;
   cursor: pointer;
 `;
@@ -30,5 +30,5 @@ export const Time = styled.span`
   margin-left: -2.7rem;
   font-family: Pretendard500;
   font-size: 13px;
-  color: #898fa0;
+  color: ${({ theme }) => theme.colors.Gray700};
 `;
