@@ -42,7 +42,7 @@ const PostItem = ({ data, getAllPost, getUserProfile }: Props): JSX.Element => {
               src={Edit}
               width="25"
               height="25"
-              alt="수정 이미지"
+              alt="Edit Button Image"
               onClick={() => {
                 router.push(`/modify/${data.idx}`);
               }}
@@ -51,7 +51,7 @@ const PostItem = ({ data, getAllPost, getUserProfile }: Props): JSX.Element => {
               src={Delete}
               width="25"
               height="25"
-              alt="삭제 이미지"
+              alt="Delete Button Image"
               onClick={() => {
                 deletePost({
                   idx: data.idx,

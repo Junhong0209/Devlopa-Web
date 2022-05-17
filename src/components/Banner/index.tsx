@@ -7,7 +7,7 @@ import * as S from "src/components/Banner/index.style";
 const Banner = (): JSX.Element => {
   return (
     <S.Container>
-      <Image src={BannerImage} width={6.4} height={1} layout="responsive" />
+      <Image src={BannerImage} width={6.4} height={1} layout="responsive" alt="Banner Image" />
     </S.Container>
   );
 };

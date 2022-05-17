@@ -10,7 +10,7 @@ interface Props {
 const UserProfile = ({ name, number }: Props): JSX.Element => {
   return (
     <S.Container>
-      <S.ProfileImage src={DefaultImage} />
+      <S.ProfileImage src={DefaultImage} alt="User Icon" />
       <S.Number>{number}</S.Number>
       <S.Name>{name}</S.Name>
     </S.Container>

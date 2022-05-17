@@ -12,22 +12,9 @@ const User = ({ username, date }: Props): JSX.Element => {
   return (
     <S.Container>
       <S.ImageWrapper>
-        <Image
-          src={UserImage}
-          width={36}
-          height={36}
-          onClick={() => {
-            // Todo
-          }}
-        />
+        <Image src={UserImage} width={36} height={36} alt="User Icon" />
       </S.ImageWrapper>
-      <S.Name
-        onClick={() => {
-          // Todo
-        }}
-      >
-        {username}
-      </S.Name>
+      <S.Name>{username}</S.Name>
       <S.Time>{date}</S.Time>
     </S.Container>
   );

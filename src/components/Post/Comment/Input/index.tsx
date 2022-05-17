@@ -43,7 +43,7 @@ const CommentInput = ({ idx, reloadComment }: Props): JSX.Element => {
           onSubmit();
         }}
       >
-        <Image src={Send} width={30} height={30} id="image" />
+        <Image src={Send} width={30} height={30} id="image" alt="send Image" />
       </S.ImageWrapper>
     </S.Container>
   );
