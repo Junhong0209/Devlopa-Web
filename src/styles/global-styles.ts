@@ -1,6 +1,8 @@
 import { createGlobalStyle } from "styled-components";
+import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
+  ${reset};
   // Fonts 추가
   @font-face {
     font-family: Pretendard400;
@@ -43,6 +45,9 @@ const GlobalStyle = createGlobalStyle`
   }
   ul, li {
     list-style: none;
+  }
+  p, h1, h2, h3, h4, h5, h6, span {
+    font-family: Pretendard600;
   }
 
   #__next {
