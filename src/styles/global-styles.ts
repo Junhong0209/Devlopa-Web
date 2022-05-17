@@ -3,30 +3,13 @@ import reset from "styled-reset";
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
-  // Fonts 추가
-  @font-face {
-    font-family: Pretendard400;
-    src: url('/font/Pretendard-Regular.woff2');
-  }
-  @font-face {
-    font-family: Pretendard600;
-    src: url('/font/Pretendard-SemiBold.woff2');
-  }
-  @font-face {
-    font-family: Pretendard700;
-    src: url('/font/Pretendard-Bold.woff2');
-  }
-  @font-face {
-    font-family: Pretendard800;
-    src: url('/font/Pretendard-ExtraBold.woff2');
-  }
 
   html {
     height: 100%;
   }
   * {
     box-sizing: border-box;
-    font-family: Pretendard700;
+    font-family: Pretendard;
   }
   body {
     margin: 0;
@@ -47,7 +30,11 @@ const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
   p, h1, h2, h3, h4, h5, h6, span {
-    font-family: Pretendard600;
+    font-family: Pretendard;
+    font-weight: 600;
+  }
+  p {
+    font-size: 14px;
   }
 
   #__next {
