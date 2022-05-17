@@ -15,7 +15,8 @@ export const Layout = styled.div`
 
 export const Title = styled.div`
   width: 280px;
-  font-family: Pretendard700;
+  font-family: Pretendard;
+  font-weight: 700;
   font-size: 50px;
   color: ${({ theme }) => theme.colors.Blue900};
 
@@ -33,7 +34,8 @@ export const Title = styled.div`
 
 export const SubTitle = styled.div`
   margin-top: 13px;
-  font-family: Pretendard700;
+  font-family: Pretendard;
+  font-weight: 700;
   font-size: 20px;
   color: ${({ theme }) => theme.colors.Blue900};
 `;
@@ -43,7 +45,8 @@ export const LoginButton = styled.button`
   height: 60px;
   margin-top: 70px;
   border-radius: 12px;
-  font-family: Pretendard800;
+  font-family: Pretendard;
+  font-weight: 800;
   font-size: 20px;
   background-color: ${({ theme }) => theme.colors.Blue900};
   color: ${({ theme }) => theme.colors.White};

@@ -17,7 +17,8 @@ export const ImageWrapper = styled.div`
 export const Name = styled.span`
   display: flex;
   margin-left: 1rem;
-  font-family: Pretendard700;
+  font-family: Pretendard;
+  font-weight: 700;
   font-size: 17px;
   color: ${({ theme }) => theme.colors.Black600};
   z-index: 1;
@@ -28,7 +29,8 @@ export const Time = styled.span`
   display: flex;
   padding-top: 1.4rem;
   margin-left: -2.7rem;
-  font-family: Pretendard500;
+  font-family: Pretendard;
+  font-weight: 500;
   font-size: 13px;
   color: ${({ theme }) => theme.colors.Gray600};
 `;

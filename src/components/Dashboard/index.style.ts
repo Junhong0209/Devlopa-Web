@@ -11,7 +11,8 @@ export const AddPost = styled.div`
   width: 100%;
   float: right;
   font-size: 18px;
-  font-family: Pretendard600;
+  font-family: Pretendard;
+  font-weight: 600;
   color: ${({ theme }) => theme.colors.Blue600};
 
   a {
@@ -33,5 +34,7 @@ export const Nothing = styled.div`
   margin: auto;
   margin-top: 150px;
   text-align: center;
+  font-family: Pretendard;
+  font-weight: 600;
   font-size: 24px;
 `;

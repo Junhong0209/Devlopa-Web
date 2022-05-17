@@ -8,7 +8,8 @@ export const Container = styled.div`
   padding-bottom: 100px;
 
   & > #nothing-posting {
-    font-family: Pretendard600;
+  font-family: Pretendard;
+  font-weight: 600;
     text-align: center;
     font-size: 24px;
   }

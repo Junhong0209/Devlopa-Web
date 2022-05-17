@@ -25,7 +25,8 @@ export const Image = styled.span`
 
 export const Name = styled.span`
   font-size: 13px;
-  font-family: Pretendard700;
+  font-family: Pretendard;
+  font-weight: 700;
   padding-left: 10px;
 `;
 
@@ -67,7 +68,8 @@ export const MenuImage = styled.span`
 
 export const Content = styled.div`
   font-size: 16px;
-  font-family: Pretendard600;
+  font-family: Pretendard;
+  font-weight: 600;
   margin-top: 10px;
   padding: 0 10px 5px 10px;
 `;

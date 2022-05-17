@@ -8,7 +8,8 @@ export const Container = styled.div`
 `;
 
 export const NotComment = styled.div`
-  font-family: Pretendard600;
+font-family: Pretendard;
+font-weight: 600;
   text-align: center;
   font-size: 14px;
   margin-bottom: 15px;
