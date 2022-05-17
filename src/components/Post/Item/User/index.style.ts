@@ -30,5 +30,5 @@ export const Time = styled.span`
   margin-left: -2.7rem;
   font-family: Pretendard500;
   font-size: 13px;
-  color: ${({ theme }) => theme.colors.Gray700};
+  color: ${({ theme }) => theme.colors.Gray600};
 `;

@@ -58,7 +58,7 @@ export const MenuImage = styled.span`
       border-radius: 3px;
 
       &:hover {
-        background-color: ${({ theme }) => theme.colors.Gray800};
+        background-color: ${({ theme }) => theme.colors.Gray700};
         cursor: pointer;
       }
     }
