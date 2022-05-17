@@ -36,9 +36,18 @@ class MyDocument extends Document {
 
   render() {
     return (
-      <Html>
+      <Html lang="ko">
         <Head>
           <meta charSet="utf-8" />
+          <meta
+            name="Devlopa"
+            content="This is Developer's Community Web Site for DGSW Students."
+          />
+          <link
+            rel="stylesheet"
+            type="text/css"
+            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
+          />
         </Head>
         <body>
           <Main />
