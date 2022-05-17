@@ -15,3 +15,10 @@ export const handleGetUserProfile = async () => {
 
   return data;
 };
+
+export const handleTokenCheck = async () => {
+  const url: string = "v1/check_token/";
+  const { data }: any = await instance.get(url);
+
+  return data;
+};
