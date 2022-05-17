@@ -28,7 +28,6 @@ const CommentItem = ({
         ErrorToast(err.response.data.detail);
       });
   };
-  console.log(my_comment);
 
   return (
     <>
