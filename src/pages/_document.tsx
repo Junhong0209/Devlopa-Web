@@ -48,6 +48,7 @@ class MyDocument extends Document {
             type="text/css"
             href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
           />
+          <link rel="icon" href="/favicon.svg" />
         </Head>
         <body>
           <Main />
