@@ -1,10 +1,10 @@
-import GlobalStyle from "src/styles/global-styles";
+import GlobalStyle from "src/styles/globalStyles";
 import ErrorBoundary from "src/components/ErrorBoundary/ErrorBoundary";
 import Modal from "react-modal";
 import { RecoilRoot } from "recoil";
 import { Toaster } from "react-hot-toast";
 import { theme } from "src/styles/theme";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, Global } from "@emotion/react";
 import type { AppProps } from "next/app";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <RecoilRoot>
         <ErrorBoundary>
-          <GlobalStyle />
+          <Global styles={GlobalStyle} />
           <Component {...pageProps} />
           <Toaster
             position="bottom-center"
