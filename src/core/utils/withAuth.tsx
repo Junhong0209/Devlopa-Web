@@ -2,7 +2,7 @@
 /* eslint-disable react/display-name */
 import { NextRouter, useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import { handleTokenCheck } from "src/api/auth.api";
+import { handleTokenCheck } from "src/core/api/auth.api";
 import { ErrorToast } from "src/lib/Toast";
 
 const withAuth = (WrappedComponent: any) => {

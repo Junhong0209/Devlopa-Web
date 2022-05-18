@@ -1,6 +1,6 @@
 import Swal from "sweetalert2";
 
-import { handleDeletePost } from "src/api/post.api";
+import { handleDeletePost } from "src/core/api/post.api";
 import { ErrorToast, SuccessToast } from "src/lib/Toast";
 
 interface Props {
