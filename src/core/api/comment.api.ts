@@ -1,4 +1,4 @@
-import { instance } from "src/lib/Axios";
+import { instance } from "src/core/lib/Axios";
 
 export const handlePostComment = async (req: object) => {
   const url: string = "v1/comment/";

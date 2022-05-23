@@ -1,4 +1,4 @@
-import { ErrorToast } from "src/lib/Toast";
+import { ErrorToast } from "src/core/lib/Toast";
 
 const addSchoolNumber = (grade: string, room: string, number: string) => {
   if (number.length === 2) {

@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 
 import { handleDeletePost } from "src/core/api/post.api";
-import { ErrorToast, SuccessToast } from "src/lib/Toast";
+import { ErrorToast, SuccessToast } from "src/core/lib/Toast";
 
 interface Props {
   idx: number;

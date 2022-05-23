@@ -3,7 +3,7 @@
 import { NextRouter, useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { handleTokenCheck } from "src/core/api/auth.api";
-import { ErrorToast } from "src/lib/Toast";
+import { ErrorToast } from "src/core/lib/Toast";
 
 const withAuth = (WrappedComponent: any) => {
   return (props: any) => {

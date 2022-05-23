@@ -1,6 +1,6 @@
 import axios, { AxiosError, AxiosInstance } from "axios";
 
-import { refresh } from "src/utils/refresh";
+import { refresh } from "src/core/utils/refresh";
 
 export const request: AxiosInstance = axios.create({
   baseURL: process.env.NEXT_PUBLIC_SERVER,
