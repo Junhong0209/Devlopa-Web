@@ -1,9 +1,9 @@
-import GlobalStyle from "src/styles/globalStyles";
+import GlobalStyle from "src/core/styles/globalStyles";
 import ErrorBoundary from "src/components/ErrorBoundary/ErrorBoundary";
 import Modal from "react-modal";
 import { RecoilRoot } from "recoil";
 import { Toaster } from "react-hot-toast";
-import { theme } from "src/styles/theme";
+import { theme } from "src/core/styles/theme";
 import { ThemeProvider, Global } from "@emotion/react";
 import type { AppProps } from "next/app";
 

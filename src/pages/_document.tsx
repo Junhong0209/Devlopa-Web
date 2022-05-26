@@ -1,4 +1,6 @@
+/* eslint-disable @next/next/no-script-in-document */
 import Document, { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 class MyDocument extends Document {
   render() {
@@ -10,10 +12,9 @@ class MyDocument extends Document {
             name="Devlopa"
             content="This is Developer's Community Web Site for DGSW Students."
           />
-          <link
-            rel="stylesheet"
+          <Script
             type="text/css"
-            href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
+            src="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
           />
           <link rel="icon" href="/favicon.svg" />
         </Head>
