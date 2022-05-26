@@ -7,6 +7,7 @@ import "@toast-ui/editor-plugin-color-syntax/dist/toastui-editor-plugin-color-sy
 import { PreviewStyle, EditorType } from "@toast-ui/editor/types/editor";
 import Button from "src/components/common/Button";
 import { useRef } from "react";
+import { Theme, useTheme } from "@emotion/react";
 
 interface Props {
   previewStyle: PreviewStyle;
@@ -22,8 +23,9 @@ const MarkdownEditor = ({
   initialEditType,
   initialValue,
   onClick,
-}: Props) => {
+}: Props): JSX.Element => {
   const editorRef = useRef<any>();
+  const theme: Theme = useTheme();
 
   return (
     <>
@@ -43,7 +45,9 @@ const MarkdownEditor = ({
         float="right"
         marginTop="1.667%"
         fontSize="1rem"
-        value="작성완료"
+        content="작성완료"
+        backgroundColor={theme.colors.Main2}
+        color={theme.colors.White}
         onClick={() => onClick(editorRef.current.getInstance().getMarkdown())}
       ></Button>
     </>

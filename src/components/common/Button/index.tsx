@@ -2,19 +2,23 @@ import styled from "@emotion/styled";
 import { CSSProperties } from "react";
 
 interface Props {
-  value: string;
-  width: string;
-  height: string;
-  borderRadius: string;
+  content?: string;
+  width?: string;
+  height?: string;
+  borderRadius?: string;
   float?: string;
   marginLeft?: string;
-  marginTop: string;
-  fontSize: string;
-  onClick: (content?: string) => void;
+  marginTop?: string;
+  fontFamily?: string;
+  fontWeight?: string;
+  fontSize?: string;
+  backgroundColor?: string;
+  color?: string;
+  onClick: () => void;
 }
 
 const Button = ({
-  value,
+  content,
   width,
   height,
   borderRadius,
@@ -22,6 +26,8 @@ const Button = ({
   marginLeft,
   marginTop,
   fontSize,
+  backgroundColor,
+  color,
   onClick,
 }: Props) => {
   const style: CSSProperties = {
@@ -31,10 +37,12 @@ const Button = ({
     marginLeft,
     marginTop,
     fontSize,
+    backgroundColor,
+    color,
   };
   return (
-    <CustomButton float={float} style={style} onClick={() => onClick}>
-      {value}
+    <CustomButton float={float} style={style} onClick={() => onClick()}>
+      {content}
     </CustomButton>
   );
 };
@@ -44,7 +52,5 @@ export default Button;
 const CustomButton = styled.button<{ float?: string }>`
   text-align: center;
   float: ${(props) => props.float};
-  background-color: ${({ theme }) => theme.colors.Main2};
-  color: ${({ theme }) => theme.colors.White};
   cursor: pointer;
 `;
