@@ -6,7 +6,7 @@ import {
   useState,
 } from "react";
 
-const useInput = <T>(
+const useTextarea = <T>(
   initValue: T
 ): [
   T,
@@ -20,4 +20,4 @@ const useInput = <T>(
   return [value, handler, setValue];
 };
 
-export default useInput;
+export default useTextarea;
