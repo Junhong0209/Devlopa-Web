@@ -22,12 +22,20 @@ const Home: NextPage = () => {
         setDAuthURL(res.data.DAuthURL);
       })
       .catch((err) => {
-        ErrorToast(err.response.data.detail);
+        try {
+          ErrorToast(err.response.data.detail);
+        } catch (error) {
+          console.log(error);
+        }
       });
   }, []);
 
   const onClick = () => {
-    router.push(DAuthURL);
+    if (DAuthURL !== "") {
+      router.push(DAuthURL);
+    } else {
+      ErrorToast("서버와 통신을 실패하였습니다.");
+    }
   };
 
   return (
