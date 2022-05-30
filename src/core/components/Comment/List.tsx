@@ -17,7 +17,6 @@ const CommentList = ({ idx, comment, commentCount }: Props): JSX.Element => {
   const [commentDatas, setCommentDatas] = useState<[]>(comment);
 
   const reloadComment = () => {
-    setIsNotComment(false);
     handleGetComment({ post_idx: idx })
       .then((res) => {
         if (res.data.list_count === 0) {
