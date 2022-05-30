@@ -9,7 +9,7 @@ import { handleGetUserProfile } from "src/core/api/auth.api";
 import addSchoolNumber from "src/core/utils/addSchoolNumber";
 import { ErrorToast } from "src/core/lib/Toast";
 import PostList from "src/core/components/Post/List";
-import ReactLoading from "react-loading";
+import Loader from "src/components/common/Loading";
 
 const User: NextPage = () => {
   const [postDatas, setPostDatas] = useState<object[]>();
@@ -53,8 +53,7 @@ const User: NextPage = () => {
       <Layout>
         {loading ? (
           <LoadingContainer>
-            <ReactLoading type="spin" color="#36383C" className="loading" />
-            로딩 중...
+            <Loader text="로딩 중..." />
           </LoadingContainer>
         ) : (
           <>

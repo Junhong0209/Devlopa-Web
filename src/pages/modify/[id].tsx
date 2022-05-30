@@ -9,6 +9,7 @@ import { handleGetPost, handleModifyPost } from "src/core/api/post.api";
 import withAuth from "src/core/utils/withAuth";
 import ReactLoading from "react-loading";
 import { ErrorAlert, SuccessAlert } from "src/core/lib/SweetAlert";
+import Loader from "src/components/common/Loading";
 
 const Editor = dynamic(
   () => import("src/core/components/Markdown/Editor/index"),
@@ -63,8 +64,7 @@ const Modify: NextPage = () => {
               <Error>게시글 정보를 가지고 오지 못했습니다.</Error>
             ) : (
               <Loading>
-                <ReactLoading type="spin" color="#36383C" className="loading" />
-                <LoadingText>게시글 정보 가져오는 중...</LoadingText>
+                <Loader text="게시글 정보 가져오는 중..." />
               </Loading>
             )
           ) : (
