@@ -6,7 +6,13 @@ import styled from "@emotion/styled";
 const Banner = (): JSX.Element => {
   return (
     <Container>
-      <Image src={BannerImage} width={6.4} height={1} layout="responsive" alt="Banner Image" />
+      <Image
+        src={BannerImage}
+        width={6.4}
+        height={1}
+        layout="responsive"
+        alt="Banner Image"
+      />
     </Container>
   );
 };
