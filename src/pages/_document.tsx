@@ -12,6 +12,10 @@ class MyDocument extends Document {
             name="Devlopa"
             content="This is Developer's Community Web Site for DGSW Students."
           />
+          <meta
+            httpEquiv="Content-Security-Policy"
+            content="upgrade-insecure-requests"
+          />
           <Script
             type="text/css"
             src="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css"
