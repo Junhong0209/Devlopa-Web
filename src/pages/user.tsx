@@ -3,7 +3,7 @@ import Head from "next/head";
 import Layout from "src/components/common/Layout/Layout";
 import withAuth from "src/core/utils/withAuth";
 import styled from "@emotion/styled";
-import DefaultImage from "public/assets/Default_User_icon.svg";
+import DefaultImage from "public/assets/Default_User_Icon.svg";
 import { useEffect, useState } from "react";
 import { handleGetUserProfile } from "src/core/api/auth.api";
 import addSchoolNumber from "src/core/utils/addSchoolNumber";
