@@ -22,6 +22,7 @@ const CommentList = ({ idx, comment, commentCount }: Props): JSX.Element => {
         if (res.data.list_count === 0) {
           setIsNotComment(true);
         } else {
+          setIsNotComment(false);
           setCommentDatas(res.data.contents);
         }
       })
@@ -34,7 +35,7 @@ const CommentList = ({ idx, comment, commentCount }: Props): JSX.Element => {
     if (commentCount === 0) {
       setIsNotComment(true);
     }
-  });
+  }, []);
 
   return (
     <Wrapper>
